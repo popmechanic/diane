@@ -16,7 +16,7 @@ You are processing unstructured notes from two sources: (1) voice-transcribed no
 
 - `vault_path` - Absolute path to the user's Obsidian vault
 - `diane_folder` - Name of the Diane folder (for voice captures)
-- `folders` - Object containing: `fleeting`, `ideas`, `literature`, `permanent`, `project`, `output`
+- `folders` - Object containing: `clippings`, `fleeting`, `ideas`, `literature`, `permanent`, `project`, `output`
 - `naming` - File naming style and wikilink format
 
 **Never hardcode paths.** Always construct full paths using: `${vault_path}/${folder_name}`
@@ -92,9 +92,10 @@ Generate suggested wikilinks using display name format: `[[Ritual Interface Brid
 
 Determine the appropriate folder based on the note's maturity (use configured folder paths):
 
+- **Clippings:** Web captures, imported content, external sources (often work of others) → `${folders.clippings}`
 - **Fleeting:** Quick captures, underdeveloped thoughts, need more processing → `${folders.fleeting}`
 - **Ideas:** Sprawling multi-concept notes, proto-projects, lots of connections but not yet structured → `${folders.ideas}`
-- **Literature:** References to books, articles, sources, quotes → `${folders.literature}`
+- **Literature:** References to books, articles, sources, quotes (processed clippings with your analysis) → `${folders.literature}`
 - **Permanent:** Well-developed atomic ideas, clear insights, original thinking → `${folders.permanent}`
 - **Project:** Goal-oriented work, specific outputs, project planning → `${folders.project}`
 

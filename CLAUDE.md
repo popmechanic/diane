@@ -46,7 +46,7 @@ All directory paths are **configured during setup** via the `/diane:setup` comma
 **Configuration variables (in `plugin.json`):**
 - `vault_path` - Absolute path to the user's Obsidian vault (empty by default, set during setup)
 - `diane_folder` - Name of the Diane folder for voice captures
-- `folders` - Object containing `fleeting`, `ideas`, `literature`, `permanent`, `project`, `output` folder names
+- `folders` - Object containing `clippings`, `fleeting`, `ideas`, `literature`, `permanent`, `project`, `output` folder names
 - `naming` - Contains `style` (kebab-case) and `wikilink_format` (display-name)
 
 ### Obsidian Vault Structure
@@ -55,11 +55,12 @@ The plugin operates on any Obsidian vault configured by the user during setup.
 
 **Default folder hierarchy:**
 - `00 Diane/` - Voice note captures from SuperWhisper (timestamped files like `2025-10-13-0930.md`)
-- `10 Fleeting notes/` - Quick captures, underdeveloped thoughts
-- `20 Ideas/` - Sprawling proto-projects with many connections, not yet structured
-- `30 Literature notes/` - Insights from books, articles, sources
-- `40 Permanent notes/` - Atomic, well-developed ideas (highest value)
-- `50 Project notes/` - Goal-oriented work, active projects
+- `10 Clippings/` - Web captures from Obsidian browser extension (imported content, often work of others)
+- `20 Fleeting notes/` - Quick captures, underdeveloped thoughts
+- `30 Ideas/` - Sprawling proto-projects with many connections, not yet structured
+- `40 Literature notes/` - Insights from books, articles, sources (processed clippings with your analysis)
+- `50 Permanent notes/` - Atomic, well-developed ideas (highest value)
+- `60 Project notes/` - Goal-oriented work, active projects
 - `99 Output/` - Published work
 - `_templates/` - Templater templates for note creation
 
@@ -126,7 +127,7 @@ All notes follow atomic Zettelkasten structure:
 ---
 created: YYYY-MM-DD HH:mm
 modified: YYYY-MM-DD HH:mm
-type: permanent|fleeting|literature|idea|project
+type: clipping|fleeting|literature|idea|permanent|project
 tags: [tag1, tag2]
 ---
 
@@ -153,9 +154,27 @@ Why this idea is significant, what it connects to, implications.
 
 **Note:** Ideas notes are less structured than the above format. They typically contain brief thoughts followed by extensive wikilinks, serving as a holding place for proto-projects that aren't ready for formal project structure yet.
 
+## Clippings Folder Philosophy
+
+The **Clippings** folder (10 Clippings/) serves as the entry point for externally-sourced content:
+
+- **Purpose**: Store web captures from the Obsidian browser extension (imported articles, blog posts, documentation)
+- **Characteristics**:
+  - Content is often the work of others (not original thinking)
+  - Raw imported material that hasn't been processed or analyzed yet
+  - May include full article text, highlights, or annotations
+  - Serves as inbox for external sources before they become literature notes
+- **When to use**:
+  - Importing web articles via Obsidian browser extension
+  - Saving external content for later processing
+  - Creating quick bookmarks of sources to review
+- **Progression**: When a clipping is read, analyzed, and synthesized with your own insights, it becomes a Literature note (40 Literature notes/)
+
+The key distinction: **Clippings are imported content; Literature notes are processed content with your analysis.**
+
 ## Ideas Folder Philosophy
 
-The **Ideas** folder (20 Ideas/) serves as a creative sandbox between permanent notes and projects:
+The **Ideas** folder (30 Ideas/) serves as a creative sandbox between permanent notes and projects:
 
 - **Purpose**: Hold sprawling, multi-concept thoughts that aren't ready to become structured projects
 - **Characteristics**:
@@ -167,7 +186,7 @@ The **Ideas** folder (20 Ideas/) serves as a creative sandbox between permanent 
   - Voice/fleeting note contains project-like thinking but lacks clear structure
   - Multiple permanent notes are connecting in interesting ways but no concrete project goals yet
   - Exploring relationships between concepts without committing to formal project
-- **Progression**: When an Idea note gains clarity and specific goals, it graduates to Project notes (50 Project notes/)
+- **Progression**: When an Idea note gains clarity and specific goals, it graduates to Project notes (60 Project notes/)
 
 ## Development Workflow
 
@@ -243,4 +262,4 @@ Based on Sönke Ahrens' "How to Take Smart Notes":
 - **Build knowledge graph**: Every note should connect to existing ideas
 - **Atomic notes**: One idea, one note, many connections
 - **Semantic over keyword**: Find conceptual relationships, not just text matches
-- **Progressive elaboration**: Fleeting → Literature → Permanent → Ideas → Project → Output
+- **Progressive elaboration**: Clippings → Fleeting → Literature → Permanent → Ideas → Project → Output

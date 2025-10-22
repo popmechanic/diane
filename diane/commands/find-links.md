@@ -15,7 +15,7 @@ Find semantically related notes in your vault and suggest wikilinks to create co
 **Before starting**, read the plugin configuration file at `diane/.claude-plugin/config.json` to get:
 
 - `vault_path` - Absolute path to the user's Obsidian vault
-- `folders` - Folder names for permanent, ideas, literature, project, fleeting notes
+- `folders` - Folder names for clippings, fleeting, ideas, literature, permanent, project notes
 - `naming.wikilink_format` - Display name format (e.g., `[[Ritual Interface Bridge]]`)
 
 **Never hardcode paths.** Always construct full paths using: `${vault_path}/${folder_name}`
@@ -69,6 +69,7 @@ Search the entire vault for related notes, focusing on:
 - Literature notes (from `folders.literature`) - Good for evidence and references
 - Project notes (from `folders.project`) - Connect ideas to active work
 - Fleeting notes (from `folders.fleeting`) - Lower priority, may reveal developing thoughts
+- Clippings (from `folders.clippings`) - Lowest priority, imported content (often work of others)
 
 ### Step 4: Rank and Present Suggestions
 

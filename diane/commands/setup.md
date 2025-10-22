@@ -59,6 +59,7 @@ Diane works with a Zettelkasten-style folder structure.
 
 Do you already have folders for:
 - Voice captures/inbox notes
+- Clippings (web captures from browser extension)
 - Fleeting notes (quick captures)
 - Ideas (proto-projects with many connections)
 - Literature notes (reading notes)
@@ -73,20 +74,22 @@ Do you already have folders for:
 ```
 What folder do you use for:
 1. Voice captures/inbox? (default: 00 Diane)
-2. Fleeting notes? (default: 10 Fleeting notes)
-3. Ideas? (default: 20 Ideas)
-4. Literature notes? (default: 30 Literature notes)
-5. Permanent notes? (default: 40 Permanent notes)
-6. Project notes? (default: 50 Project notes)
+2. Clippings? (default: 10 Clippings)
+3. Fleeting notes? (default: 20 Fleeting notes)
+4. Ideas? (default: 30 Ideas)
+5. Literature notes? (default: 40 Literature notes)
+6. Permanent notes? (default: 50 Permanent notes)
+7. Project notes? (default: 60 Project notes)
 ```
 
 **If No**: Use defaults:
 - Voice captures: `00 Diane`
-- Fleeting notes: `10 Fleeting notes`
-- Ideas: `20 Ideas`
-- Literature notes: `30 Literature notes`
-- Permanent notes: `40 Permanent notes`
-- Project notes: `50 Project notes`
+- Clippings: `10 Clippings`
+- Fleeting notes: `20 Fleeting notes`
+- Ideas: `30 Ideas`
+- Literature notes: `40 Literature notes`
+- Permanent notes: `50 Permanent notes`
+- Project notes: `60 Project notes`
 
 ### Step 4: Naming Conventions
 
@@ -140,9 +143,10 @@ Checking your vault structure...
 
 Missing folders:
 - 00 Diane/
-- 10 Fleeting notes/
-- 20 Ideas/
-- 40 Permanent notes/
+- 10 Clippings/
+- 20 Fleeting notes/
+- 30 Ideas/
+- 50 Permanent notes/
 - _templates/
 
 Should I create these folders?
@@ -155,11 +159,12 @@ If yes, create the complete folder structure:
 
 ```bash
 mkdir -p "[vault_path]/00 Diane/processed"
-mkdir -p "[vault_path]/10 Fleeting notes"
-mkdir -p "[vault_path]/20 Ideas"
-mkdir -p "[vault_path]/30 Literature notes"
-mkdir -p "[vault_path]/40 Permanent notes"
-mkdir -p "[vault_path]/50 Project notes"
+mkdir -p "[vault_path]/10 Clippings"
+mkdir -p "[vault_path]/20 Fleeting notes/processed"
+mkdir -p "[vault_path]/30 Ideas"
+mkdir -p "[vault_path]/40 Literature notes"
+mkdir -p "[vault_path]/50 Permanent notes"
+mkdir -p "[vault_path]/60 Project notes"
 mkdir -p "[vault_path]/99 Output"
 mkdir -p "[vault_path]/_templates"
 ```
@@ -175,6 +180,7 @@ Now update the plugin configuration:
 Update these fields in `config.json`:
 - `vault_path` - Set to the validated vault path
 - `diane_folder` - Set to the voice captures folder name (e.g., "00 Diane")
+- `folders.clippings` - Set to clippings folder name (e.g., "10 Clippings")
 - `folders.fleeting` - Set to fleeting notes folder name
 - `folders.ideas` - Set to ideas folder name
 - `folders.literature` - Set to literature notes folder name
@@ -194,6 +200,7 @@ Show a summary and confirm setup is complete:
 Configuration:
 - Vault path: [path]
 - Voice captures: [folder]
+- Clippings: [folder]
 - Fleeting notes: [folder]
 - Ideas: [folder]
 - Literature notes: [folder]
@@ -207,11 +214,13 @@ Vault structure:
 [Vault Name]/
 ├── 00 Diane/              # Voice note captures
 │   └── processed/         # Archived processed notes
-├── 10 Fleeting notes/     # Quick captures
-├── 20 Ideas/              # Proto-projects with many connections
-├── 30 Literature notes/   # Source insights
-├── 40 Permanent notes/    # Atomic ideas
-├── 50 Project notes/      # Active work
+├── 10 Clippings/          # Web captures (browser extension imports)
+├── 20 Fleeting notes/     # Quick captures
+│   └── processed/         # Archived processed notes
+├── 30 Ideas/              # Proto-projects with many connections
+├── 40 Literature notes/   # Source insights (processed clippings with analysis)
+├── 50 Permanent notes/    # Atomic ideas
+├── 60 Project notes/      # Active work
 ├── 99 Output/             # Published work
 └── _templates/            # Templater templates
 

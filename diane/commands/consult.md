@@ -10,7 +10,7 @@ You are invoking the Diane consultant—a specialized subagent who will analyze 
 
 The `/consult` command activates Diane, your vault analyst and creative consultant. Diane will:
 
-- **Scan your notes** across permanent, project, literature, and fleeting categories
+- **Scan your notes** across clippings, fleeting, ideas, literature, permanent, and project categories
 - **Identify patterns** in your thinking and recurring themes
 - **Suggest unexpected connections** between disparate ideas
 - **Notice gaps** where concepts are mentioned but underdeveloped
@@ -49,16 +49,17 @@ Examples:
 
 - `vault_path` - Absolute path to the user's Obsidian vault
 - `diane_folder` - Voice captures folder
-- `folders` - Object containing `permanent`, `ideas`, `project`, `literature`, `fleeting`, `output` folder names
+- `folders` - Object containing `clippings`, `fleeting`, `ideas`, `literature`, `permanent`, `project`, `output` folder names
 
 **Never hardcode paths.** Construct full paths using: `${vault_path}/${folder_name}`
 
 **Folder Structure (from configuration):**
-- Permanent notes (`folders.permanent`) - Atomic, well-developed ideas (highest value)
-- Ideas (`folders.ideas`) - Sprawling proto-projects, lots of connections, not yet structured
-- Project notes (`folders.project`) - Goal-oriented work, active projects
-- Literature notes (`folders.literature`) - References, sources, reading notes
+- Clippings (`folders.clippings`) - Web captures, imported content (often work of others)
 - Fleeting notes (`folders.fleeting`) - Quick captures, underdeveloped thoughts
+- Ideas (`folders.ideas`) - Sprawling proto-projects, lots of connections, not yet structured
+- Literature notes (`folders.literature`) - References, sources, reading notes (processed with your analysis)
+- Permanent notes (`folders.permanent`) - Atomic, well-developed ideas (highest value)
+- Project notes (`folders.project`) - Goal-oriented work, active projects
 - Diane (`diane_folder`) - Voice captures (raw material)
 
 ## Your Projects

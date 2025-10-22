@@ -3,11 +3,12 @@
   "diane_folder": "00 Diane",
   "templates_folder": "_templates",
   "folders": {
-    "fleeting": "10 Fleeting notes",
-    "ideas": "20 Ideas",
-    "literature": "30 Literature notes",
-    "permanent": "40 Permanent notes",
-    "project": "50 Project notes",
+    "clippings": "10 Clippings",
+    "fleeting": "20 Fleeting notes",
+    "ideas": "30 Ideas",
+    "literature": "40 Literature notes",
+    "permanent": "50 Permanent notes",
+    "project": "60 Project notes",
     "output": "99 Output"
   },
   "naming": {
